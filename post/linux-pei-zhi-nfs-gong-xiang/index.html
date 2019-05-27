@@ -7,7 +7,7 @@
 <meta name="description" content="Hello World！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://zhyfans.github.io/favicon.ico?v=1558938080685">
+<link rel="shortcut icon" href="https://zhyfans.github.io/favicon.ico?v=1558938630646">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -91,7 +91,7 @@
             <p class="article-meta">
               2019-05-27
               
-                <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
+                <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge warning">
                   linux
                 </a>
               
@@ -102,22 +102,25 @@
 服务可以将远程 Linux 系统上的文件共享资源挂载到本地主机的目录上，从而使得本地主机(Linux 客户端)基于 TCP/IP 协议，像使用本地主机上的资源那样读写远程 Linux 系统上的共享文件。</p>
 <!-- more -->
 <p><strong>一、服务器配置</strong>
-通过SSH工具连接服务器
-输入命令：vi /etc/exports 按i编辑
+通过SSH工具连接服务器</p>
+<pre><code>输入命令：vi /etc/exports 按i编辑
 加入配置内容：共享目录 客户机IP(权限ro-只读 rw-读写)
-例如：/picclife/peflexnfsdta/cbsnfsdta 10.135.100.146(ro)
+</code></pre>
+<p>例如：/picclife/peflexnfsdta/cbsnfsdta 10.135.100.146(ro)
 <img src="https://zhyfans.github.io/post-images/1558936839978.png" alt=""></p>
-<p>按esc退出编辑，输入:wq保存配置</p>
-<p>输入命令：
+<pre><code>按esc退出编辑，输入:wq保存配置
+输入命令：
 service rpcbind restart
 service nfs restart
 exportfs
 重启NFS服务，使配置生效
-查看挂载情况：输入命令：cat /etc/exports</p>
-<p><strong>二、客户机挂载</strong>
-通过SSH连接客户机挂载服务器共享目录
+查看挂载情况：输入命令：cat /etc/exports 
+</code></pre>
+<p><strong>二、客户机挂载</strong></p>
+<pre><code>通过SSH连接客户机挂载服务器共享目录
 输入命令：mount 服务器IP:服务器共享目录 本地目录
-例如：mount 10.135.100.26:/picclife/peflexnfsdta/ /picclife/peflexnfsdta
+</code></pre>
+<p>例如：mount 10.135.100.26:/picclife/peflexnfsdta/ /picclife/peflexnfsdta
 <img src="https://zhyfans.github.io/post-images/1558936887290.png" alt="">
 进入本地相应目录，可以看到服务端共享目录中的文件。</p>
 
@@ -151,7 +154,7 @@ exportfs
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://zhyfans.github.io/images/avatar.png?v=1558938080685" class="no-responsive avatar">
+    <img src="https://zhyfans.github.io/images/avatar.png?v=1558938630646" class="no-responsive avatar">
     <div class="text-muted">Hello World！</div>
     <div class="social-container">
       
@@ -199,7 +202,7 @@ exportfs
     </div>
     <div class="row">
       
-        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge ">
+        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
           linux
         </a>
       
