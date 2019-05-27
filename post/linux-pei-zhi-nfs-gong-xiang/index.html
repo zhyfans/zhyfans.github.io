@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Gridea | zhyfans&#39;s blog</title>
+<title>Linux配置NFS共享 | zhyfans&#39;s blog</title>
 <meta name="description" content="Hello World！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://zhyfans.github.io">zhyfans&#39;s blog</a></h3>
@@ -79,42 +80,61 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="current-tag">标签: Gridea</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zhyfans.github.io/post/hello-gridea">Hello Gridea</a>
-    </h2>
-    <p class="article-meta">
-      2018-12-12
-      
-        <a href="https://zhyfans.github.io/tag/gridea" class="badge ">
-          Gridea
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+          <article class="article">
+            <h1>Linux配置NFS共享</h1>
+            <p class="article-meta">
+              2019-05-27
+              
+                <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
+                  linux
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>NFS（Network File System）网络文件系统
+服务可以将远程 Linux 系统上的文件共享资源挂载到本地主机的目录上，从而使得本地主机(Linux 客户端)基于 TCP/IP 协议，像使用本地主机上的资源那样读写远程 Linux 系统上的共享文件。</p>
+<!-- more -->
+<p><strong>一、服务器配置</strong>
+通过SSH工具连接服务器
+输入命令：vi /etc/exports 按i编辑
+加入配置内容：共享目录 客户机IP(权限ro-只读 rw-读写)
+例如：/picclife/peflexnfsdta/cbsnfsdta 10.135.100.146(ro)
+<img src="https://zhyfans.github.io/post-images/1558936839978.png" alt=""></p>
+<p>按esc退出编辑，输入:wq保存配置</p>
+<p>输入命令：
+service rpcbind restart
+service nfs restart
+exportfs
+重启NFS服务，使配置生效
+查看挂载情况：输入命令：cat /etc/exports</p>
+<p><strong>二、客户机挂载</strong>
+通过SSH连接客户机挂载服务器共享目录
+输入命令：mount 服务器IP:服务器共享目录 本地目录
+例如：mount 10.135.100.26:/picclife/peflexnfsdta/ /picclife/peflexnfsdta
+<img src="https://zhyfans.github.io/post-images/1558936887290.png" alt="">
+进入本地相应目录，可以看到服务端共享目录中的文件。</p>
 
-    </p>
-    <div class="row">
-      <a href="https://zhyfans.github.io/post/hello-gridea" class="readmore-link">
-        <button>
-          阅读详情
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://zhyfans.github.io/post/hello-gridea">
+                <h3 class="post-title">
+                  Hello Gridea
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://zhyfans.github.io/images/avatar.png?v=1558937203859" class="no-responsive avatar">
@@ -165,11 +185,11 @@
     </div>
     <div class="row">
       
-        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge ">
+        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
           linux
         </a>
       
-        <a href="https://zhyfans.github.io/tag/gridea" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/gridea" class="badge ">
           Gridea
         </a>
       
@@ -179,6 +199,7 @@
     Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhyfans.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
+
 
     </div>
 
