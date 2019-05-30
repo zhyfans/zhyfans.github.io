@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhyfans.github.io</id>
     <title>zhyfans&apos;s blog</title>
-    <updated>2019-05-27T06:31:13.209Z</updated>
+    <updated>2019-05-30T06:10:54.701Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhyfans.github.io"/>
     <link rel="self" href="https://zhyfans.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://zhyfans.github.io/images/avatar.png</logo>
     <icon>https://zhyfans.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, zhyfans&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[mysql驱动与mysql版本及jdk版本对应]]></title>
+        <id>https://zhyfans.github.io/post/mysql-qu-dong-yu-mysql-ban-ben-ji-jdk-ban-ben-dui-ying-guan-xi</id>
+        <link href="https://zhyfans.github.io/post/mysql-qu-dong-yu-mysql-ban-ben-ji-jdk-ban-ben-dui-ying-guan-xi">
+        </link>
+        <updated>2019-05-30T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>今天新启一个项目的时候报错，日志显示数据库驱动问题，发现是使用驱动版本与数据库版本及jdk版本不一致造成的，记录一下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>今天新启一个项目的时候报错，日志显示数据库驱动问题，发现是使用驱动版本与数据库版本及jdk版本不一致造成的，记录一下。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux配置NFS共享]]></title>
         <id>https://zhyfans.github.io/post/linux-pei-zhi-nfs-gong-xiang</id>

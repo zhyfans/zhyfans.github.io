@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>zhyfans&#39;s blog</title>
+<title>mysql驱动与mysql版本及jdk版本对应 | zhyfans&#39;s blog</title>
 <meta name="description" content="Hello World！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="https://zhyfans.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -23,6 +29,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://zhyfans.github.io">zhyfans&#39;s blog</a></h3>
@@ -76,106 +83,71 @@
   </div>
 </nav>
 
-
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>mysql驱动与mysql版本及jdk版本对应</h1>
+            <p class="article-meta">
+              2019-05-30
+              
+                <a href="https://zhyfans.github.io/tag/szsrtdaYO" class="badge secondary">
+                  开发
+                </a>
+              
+                <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge secondary">
+                  数据库
+                </a>
+              
+                <a href="https://zhyfans.github.io/tag/kxBqm5j-z" class="badge secondary">
+                  mysql
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>今天新启一个项目的时候报错，日志显示数据库驱动问题，发现是使用驱动版本与数据库版本及jdk版本不一致造成的，记录一下。</p>
+<!-- more -->
+<p>修改之前，本地环境为：</p>
+<pre><code>jdk：1.7
+mysql版本：8.0
+mysql驱动版本：mysql-connector-java-8.0.16.jar
+</code></pre>
+<p>启动项目报错，看了官网文档之后，把驱动版本修改为：<em>mysql-connector-java-5.1.47.jar</em> 解决问题</br>
+下面是版本对应：</br>
+<img src="https://zhyfans.github.io/post-images/1559196475266.png" alt=""></p>
+<p>官网文档地址：</br>
+https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-versions.html （Connector/J Versions 5.1）</br>
+https://dev.mysql.com/doc/connector-j/6.0/en/connector-j-versions.html （Connector/J Versions 6.0）</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zhyfans.github.io/post/mysql-qu-dong-yu-mysql-ban-ben-ji-jdk-ban-ben-dui-ying-guan-xi">mysql驱动与mysql版本及jdk版本对应</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-30
-      
-        <a href="https://zhyfans.github.io/tag/szsrtdaYO" class="badge secondary">
-          开发
-        </a>
-      
-        <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge secondary">
-          数据库
-        </a>
-      
-        <a href="https://zhyfans.github.io/tag/kxBqm5j-z" class="badge success">
-          mysql
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>今天新启一个项目的时候报错，日志显示数据库驱动问题，发现是使用驱动版本与数据库版本及jdk版本不一致造成的，记录一下。</p>
-
-    </p>
-    <div class="row">
-      <a href="https://zhyfans.github.io/post/mysql-qu-dong-yu-mysql-ban-ben-ji-jdk-ban-ben-dui-ying-guan-xi" class="readmore-link">
-        <button>
-          阅读详情
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zhyfans.github.io/post/linux-pei-zhi-nfs-gong-xiang">Linux配置NFS共享</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-27
-      
-        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
-          linux
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>NFS（Network File System）网络文件系统
-服务可以将远程 Linux 系统上的文件共享资源挂载到本地主机的目录上，从而使得本地主机(Linux 客户端)基于 TCP/IP 协议，像使用本地主机上的资源那样读写远程 Linux 系统上的共享文件。</p>
-
-    </p>
-    <div class="row">
-      <a href="https://zhyfans.github.io/post/linux-pei-zhi-nfs-gong-xiang" class="readmore-link">
-        <button>
-          阅读详情
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zhyfans.github.io/post/hello-gridea">Hello Gridea</a>
-    </h2>
-    <p class="article-meta">
-      2018-12-12
-      
-        <a href="https://zhyfans.github.io/tag/gridea" class="badge secondary">
-          Gridea
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-    </p>
-    <div class="row">
-      <a href="https://zhyfans.github.io/post/hello-gridea" class="readmore-link">
-        <button>
-          阅读详情
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://zhyfans.github.io/post/linux-pei-zhi-nfs-gong-xiang">
+                <h3 class="post-title">
+                  Linux配置NFS共享
+                </h3>
+              </a>
+            </div>
+          
         </div>
         
-        <div class="row flex-edges">
-  
-  
-</div>
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
-      
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://zhyfans.github.io/images/avatar.png?v=1559196649177" class="no-responsive avatar">
@@ -232,11 +204,11 @@
     </div>
     <div class="row">
       
-        <a href="https://zhyfans.github.io/tag/szsrtdaYO" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/szsrtdaYO" class="badge ">
           开发
         </a>
       
-        <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge success">
           数据库
         </a>
       
@@ -244,11 +216,11 @@
           mysql
         </a>
       
-        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge ">
           linux
         </a>
       
-        <a href="https://zhyfans.github.io/tag/gridea" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/gridea" class="badge warning">
           Gridea
         </a>
       
@@ -259,7 +231,9 @@
   </div>
 </div>
 
+
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
@@ -269,6 +243,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7059561cb256593748c3',
+        clientSecret: 'ad35452f15b33e36fa32bf26d54fedb57922959b',
+        repo: 'zhyfans.github.io',
+        owner: 'zhyfans',
+        admin: ['zhyfans'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
