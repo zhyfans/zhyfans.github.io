@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhyfans.github.io</id>
     <title>zhyfans&apos;s blog</title>
-    <updated>2019-06-12T07:01:09.589Z</updated>
+    <updated>2019-06-12T07:03:21.431Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhyfans.github.io"/>
     <link rel="self" href="https://zhyfans.github.io/atom.xml"/>
@@ -16,15 +16,13 @@
         <link href="https://zhyfans.github.io/post/conan_tv_list">
         </link>
         <updated>2019-06-12T06:56:18.000Z</updated>
-        <summary type="html"><![CDATA[<p>注：</p>
-<pre><code>　　1、带“★”与加粗文字表示特别篇，带“◆”表示动画原创，即漫画中没有的，B：出现黑衣组织，F：出现FBI，C：出现CIA，S：工藤新一出现，X：出现服部平次，K：出现怪盗基德。
-　　2、电视上播放的动画顺序与DVD版的收录顺序并不一致，该列表以电视上的播放顺序为准。
-</code></pre>
+        <summary type="html"><![CDATA[<p>注：
+　　1、带“★”与加粗文字表示特别篇，带“◆”表示动画原创，即漫画中没有的，B：出现黑衣组织，F：出现FBI，C：出现CIA，S：工藤新一出现，X：出现服部平次，K：出现怪盗基德。</br>
+　　2、电视上播放的动画顺序与DVD版的收录顺序并不一致，该列表以电视上的播放顺序为准。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>注：</p>
-<pre><code>　　1、带“★”与加粗文字表示特别篇，带“◆”表示动画原创，即漫画中没有的，B：出现黑衣组织，F：出现FBI，C：出现CIA，S：工藤新一出现，X：出现服部平次，K：出现怪盗基德。
-　　2、电视上播放的动画顺序与DVD版的收录顺序并不一致，该列表以电视上的播放顺序为准。
-</code></pre>
+        <content type="html"><![CDATA[<p>注：
+　　1、带“★”与加粗文字表示特别篇，带“◆”表示动画原创，即漫画中没有的，B：出现黑衣组织，F：出现FBI，C：出现CIA，S：工藤新一出现，X：出现服部平次，K：出现怪盗基德。</br>
+　　2、电视上播放的动画顺序与DVD版的收录顺序并不一致，该列表以电视上的播放顺序为准。</p>
 ]]></content>
     </entry>
     <entry>
