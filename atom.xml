@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhyfans.github.io</id>
     <title>zhyfans&apos;s blog</title>
-    <updated>2019-07-11T03:03:22.044Z</updated>
+    <updated>2019-07-11T03:05:45.162Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhyfans.github.io"/>
     <link rel="self" href="https://zhyfans.github.io/atom.xml"/>
@@ -16,6 +16,10 @@
         <link href="https://zhyfans.github.io/post/linux-xia-an-zhuang-pei-zhi-nginx">
         </link>
         <updated>2019-07-11T02:52:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[名侦探柯南TV版目录（不定期更新）]]></title>
