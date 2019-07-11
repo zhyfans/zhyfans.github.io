@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | zhyfans&#39;s blog</title>
+<title>Linux下安装配置Nginx | zhyfans&#39;s blog</title>
 <meta name="description" content="Hello World！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="https://zhyfans.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -23,6 +29,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://zhyfans.github.io">zhyfans&#39;s blog</a></h3>
@@ -79,40 +86,116 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="row tags-container">
+          <article class="article">
+            <h1>Linux下安装配置Nginx</h1>
+            <p class="article-meta">
+              2019-07-11
+              
+                <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
+                  linux
+                </a>
+              
+            </p>
             
-              <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge secondary">
-                linux
-              </a>
-            
-              <a href="https://zhyfans.github.io/tag/h1AdpePUv" class="badge ">
-                动漫
-              </a>
-            
-              <a href="https://zhyfans.github.io/tag/ggzN2CT22" class="badge warning">
-                柯南
-              </a>
-            
-              <a href="https://zhyfans.github.io/tag/szsrtdaYO" class="badge success">
-                开发
-              </a>
-            
-              <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge success">
-                数据库
-              </a>
-            
-              <a href="https://zhyfans.github.io/tag/kxBqm5j-z" class="badge secondary">
-                mysql
-              </a>
-            
-              <a href="https://zhyfans.github.io/tag/gridea" class="badge ">
-                Gridea
-              </a>
-            
-          </div>
+            <div class="post-content">
+              <p><strong>一、准备服务器</strong></p>
+<p>例如：</p>
+<pre><code>负载均衡服务器 10.135.100.23
+　　WEB服务器1    10.135.100.27
+　　WEB服务器2    10.135.100.24
+</code></pre>
+<p><strong>二、安装nginx</strong></p>
+<p>负载均衡服务器 10.135.100.23安装nginx</br></p>
+<p>1、进入：/picclife/nginx/ 输入以下命令，下载相关包</br>
+下载nginx: wget http://nginx.org/download/nginx-1.8.0.tar.gz</br>
+下载openssl : wget http://www.openssl.org/source/openssl-fips-2.0.9.tar.gz</br>
+下载zlib : wget http://zlib.net/zlib-1.2.8.tar.gz</br>
+下载pcre    : wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz</br>
+<img src="https://zhyfans.github.io/post-images/1562813619758.png" alt=""></br></p>
+<p>2、解压编译安装</br>
+按此顺序执行安装：openssl--&gt;pcre--&gt;zlib--&gt;nginx</br></p>
+<pre><code>openssl ：
+tar zxvf openssl-fips-2.0.9.tar.gz
+cd openssl-fips-2.0.9
+./config &amp;&amp; make &amp;&amp; make install
+</code></pre>
+<p><img src="https://zhyfans.github.io/post-images/1562813634293.png" alt=""></br></p>
+<pre><code>pcre:
+tar zxvf pcre-8.39.tar.gz
+cd pcre-8.39
+./configure &amp;&amp; make &amp;&amp; make install 
+</code></pre>
+<p><img src="https://zhyfans.github.io/post-images/1562813643590.png" alt=""></br></p>
+<pre><code>zlib:
+tar zxvf zlib-1.2.8.tar.gz
+cd zlib-1.2.8
+./configure &amp;&amp; make &amp;&amp; make install 
+</code></pre>
+<p><img src="https://zhyfans.github.io/post-images/1562813657651.png" alt=""></br></p>
+<p>最后安装nginx</br></p>
+<pre><code>tar zxvf nginx-1.8.0.tar.gz
+cd nginx-1.8.0
+./configure &amp;&amp; make &amp;&amp; make install
+</code></pre>
+<p><img src="https://zhyfans.github.io/post-images/1562813666092.png" alt=""></br></p>
+<p>3、启动nginx</br>
+输入命令：/usr/local/nginx/sbin/nginx</br>
+如果出现错误提示：</br>
+<code>error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory</code></br>
+原因：在RedHat 64位机器上nginx读取的pcre文件为/lib64/libpcre.so.1文件，默认安装pcre时libpcre.so文件安装在/usr/local/lib/目录下，所以输入/opt/nginx/sbin/nginx -V 找不到文件路径！！
+进入/usr/local/lib  执行   ln -s /usr/local/lib/libpcre.so.1 /lib64/ 再启动nginx</br>
+<img src="https://zhyfans.github.io/post-images/1562813674665.png" alt=""></br></p>
+<p><strong>三、配置nginx负载均衡</strong></br>
+编辑/usr/local/nginx/conf/ nginx.conf</br>
+在http段加入以下代码:</p>
+<pre><code>	upstream 10.135.100.23 { 
+    	server 10.135.100.27:8080; 
+    	server 10.135.100.24:8080;
+}
+server{ 
+    listen 80; 
+    server_name 10.135.100.23; 
+    location / { 
+        proxy_pass http://10.135.100.23; 
+        proxy_set_header Host $host; 
+        proxy_set_header X-Real-IP $remote_addr; 
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; 
+    } 
+}
+</code></pre>
+<p>重启nginx</br></p>
+<p>访问负载均衡服务器：http://10.135.100.23 ，请求会被分配至24\27两台web服务器。</br>
+停止nginx:</br>
+<img src="https://zhyfans.github.io/post-images/1562813690164.png" alt=""></p>
+
+            </div>
+          </article>
         </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://zhyfans.github.io/post/conan_tv_list">
+                <h3 class="post-title">
+                  名侦探柯南TV版目录（不定期更新）
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://zhyfans.github.io/images/avatar.png?v=1562814174725" class="no-responsive avatar">
@@ -187,11 +270,11 @@
     </div>
     <div class="row">
       
-        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge ">
+        <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="badge success">
           linux
         </a>
       
-        <a href="https://zhyfans.github.io/tag/h1AdpePUv" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/h1AdpePUv" class="badge success">
           动漫
         </a>
       
@@ -203,7 +286,7 @@
           开发
         </a>
       
-        <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge secondary">
+        <a href="https://zhyfans.github.io/tag/SE2-h-cXd" class="badge ">
           数据库
         </a>
       
@@ -221,7 +304,8 @@
     Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhyfans.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-  
+
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -233,6 +317,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '7059561cb256593748c3',
+        clientSecret: 'ad35452f15b33e36fa32bf26d54fedb57922959b',
+        repo: 'zhyfans.github.io',
+        owner: 'zhyfans',
+        admin: ['zhyfans'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
