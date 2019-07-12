@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhyfans.github.io</id>
     <title>zhyfans&apos;s blog</title>
-    <updated>2019-07-12T07:49:24.807Z</updated>
+    <updated>2019-07-12T08:53:11.714Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhyfans.github.io"/>
     <link rel="self" href="https://zhyfans.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2019, zhyfans&apos;s blog</rights>
     <entry>
         <title type="html"><![CDATA[Linux下安装配置Nginx]]></title>
-        <id>https://zhyfans.github.io/post/linux-xia-an-zhuang-pei-zhi-nginx</id>
-        <link href="https://zhyfans.github.io/post/linux-xia-an-zhuang-pei-zhi-nginx">
+        <id>https://zhyfans.github.io/post/aHp1vzdez</id>
+        <link href="https://zhyfans.github.io/post/aHp1vzdez">
         </link>
         <updated>2019-07-11T02:52:57.000Z</updated>
         <summary type="html"><![CDATA[<p>Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可以作为一个HTTP服务器进行网站的发布处理，另外Nginx可以作为反向代理进行负载均衡的实现。</p>
@@ -38,8 +38,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux安装和使用sshfs映射远程目录]]></title>
-        <id>https://zhyfans.github.io/post/linux-an-zhuang-he-shi-yong-sshfs-ying-she-yuan-cheng-mu-lu</id>
-        <link href="https://zhyfans.github.io/post/linux-an-zhuang-he-shi-yong-sshfs-ying-she-yuan-cheng-mu-lu">
+        <id>https://zhyfans.github.io/post/xnK3ieXep</id>
+        <link href="https://zhyfans.github.io/post/xnK3ieXep">
         </link>
         <updated>2019-05-31T06:51:35.000Z</updated>
         <summary type="html"><![CDATA[<p>Linux服务器上可以使用sshfs将远程文件系统映射到本地目录，很方便的同远程服务器进行文件共享。</p>
@@ -49,8 +49,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[mysql驱动与mysql版本及jdk版本对应]]></title>
-        <id>https://zhyfans.github.io/post/mysql-qu-dong-yu-mysql-ban-ben-ji-jdk-ban-ben-dui-ying-guan-xi</id>
-        <link href="https://zhyfans.github.io/post/mysql-qu-dong-yu-mysql-ban-ben-ji-jdk-ban-ben-dui-ying-guan-xi">
+        <id>https://zhyfans.github.io/post/fIc-ezsts</id>
+        <link href="https://zhyfans.github.io/post/fIc-ezsts">
         </link>
         <updated>2019-05-30T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>今天新启一个项目的时候报错，日志显示数据库驱动问题，发现是使用驱动版本与数据库版本及jdk版本不一致造成的，记录一下。</p>
@@ -60,8 +60,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux配置NFS共享]]></title>
-        <id>https://zhyfans.github.io/post/linux-pei-zhi-nfs-gong-xiang</id>
-        <link href="https://zhyfans.github.io/post/linux-pei-zhi-nfs-gong-xiang">
+        <id>https://zhyfans.github.io/post/94CFCjaKo</id>
+        <link href="https://zhyfans.github.io/post/94CFCjaKo">
         </link>
         <updated>2019-05-27T05:58:16.000Z</updated>
         <summary type="html"><![CDATA[<p>NFS（Network File System）网络文件系统
