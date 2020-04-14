@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://zhyfans.github.io/favicon.ico?v=1565263563748">
+<link rel="shortcut icon" href="https://zhyfans.github.io/favicon.ico?v=1586827385604">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://zhyfans.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://zhyfans.github.io">
-        <img src="https://zhyfans.github.io/images/avatar.png?v=1565263563748" class="site-logo">
+        <img src="https://zhyfans.github.io/images/avatar.png?v=1586827385604" class="site-logo">
         <h1 class="site-title">zhyfans&#39;s blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -128,12 +128,12 @@
               <p>Linux服务器上可以使用sshfs将远程文件系统映射到本地目录，很方便的同远程服务器进行文件共享。</p>
 <!-- more -->
 <p><strong>一、 sshfs软件安装</strong></p>
-<p>ubuntu上安装</br>
+<p>ubuntu上安装</br><br>
 <code>apt-get install sshfs</code></p>
-<p>Fedore上安装</br>
+<p>Fedore上安装</br><br>
 <code>yum install fuse-sshfs</code></p>
-<p>CentOS上安装</br>
-方法1：yum安装</br>
+<p>CentOS上安装</br><br>
+方法1：yum安装</br><br>
 默认源无该工具，需要先安装EPEL源</p>
 <pre><code>yum install -y epel-release
 yum -y install fuse-sshfs
@@ -141,14 +141,14 @@ yum list fs-sshfs
 Installed Packages
 fuse-sshfs.x86_64                2.5-1.el7                @epel
 </code></pre>
-<p>方法2：下载rpm安装</br>
-下载rpm文件：<a href="https://oemn-my.sharepoint.com/:u:/g/personal/zhyfans365_office365a1_vip/EQJR_zde35pImHDhdqjl4yUBQ9YuUFjLJg-hMWQYGqKr2Q?e=ZrBhqP">sshfs.rar</a></br>
+<p>方法2：下载rpm安装</br><br>
+下载rpm文件：<a href="https://oemn-my.sharepoint.com/:u:/g/personal/zhyfans365_office365a1_vip/EQJR_zde35pImHDhdqjl4yUBQ9YuUFjLJg-hMWQYGqKr2Q?e=ZrBhqP">sshfs.rar</a></br><br>
 需要先安装fuse(安装fuse-sshfs依赖于fuse)</p>
 <pre><code>rpm -Uvh fuse-libs-2.9.2-7.el7.x86_64.rpm
 rpm -Uvh fuse-2.9.2-7.el7.x86_64.rpm
 </code></pre>
-<p>安装fuse-sshfs</br>
-<code>rpm -ivh fuse-sshfs-2.2-1.el7.rf.x86_64.rpm</code> </br>
+<p>安装fuse-sshfs</br><br>
+<code>rpm -ivh fuse-sshfs-2.2-1.el7.rf.x86_64.rpm</code> </br><br>
 如果fuse没有安装，会报错：</p>
 <pre><code>warning: fuse-sshfs-2.2-1.el7.rf.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 6b8d79e6: NOKEY
 error: Failed dependencies:
@@ -159,39 +159,39 @@ error: Failed dependencies:
         libfuse.so.2(FUSE_2.6)(64bit) is needed by fuse-sshfs-2.2-1.el7.rf.x86_64
         libfuse.so.2(FUSE_2.7)(64bit) is needed by fuse-sshfs-2.2-1.el7.rf.x86_64
 </code></pre>
-<p>方法3：编译安装</br>
-下载：https://github.com/libfuse/sshfs/releases</br>
+<p>方法3：编译安装</br><br>
+下载：https://github.com/libfuse/sshfs/releases</br><br>
 当前最新版本：sshfs-3.2.0.tar.gz</p>
 <pre><code>tar xvf sshfs-3.2.0.tar.gz
 ./configure --prefix=/usr/local/sshfs
 make
 make install
 </code></pre>
-<p>安装完成之后如果需要非root用户使用，需要将用户加入fuse用户组中，fuse用户组不用自己创建，在上一步安装时会自动创建。</br>
-修改用户组：</br>
+<p>安装完成之后如果需要非root用户使用，需要将用户加入fuse用户组中，fuse用户组不用自己创建，在上一步安装时会自动创建。</br><br>
+修改用户组：</br><br>
 <code>usermod -a -G fuse username</code></br></p>
 <p><strong>二、sshfs使用--挂载目录</strong></p>
-<p>1.挂载命令</br>
+<p>1.挂载命令</br><br>
 <code>sshfs user@hostname:path mout_point</code></p>
-<p>举例：</br>
-先创建一个挂载点目录：</br>
-<code>mkdir /mnt/sftpSrvData</code></br>
-挂载远程目录到本地挂载点目录：</br>
-<code>sshfs -o ro root@192.168.100.111:/opt/sftpSrvRootDir  /mnt/sftpSrvData</code></br>
-常用参数：</br>
--o ro: 只读方式挂载。如果不指定参数，默认是读写方式挂载。</br>
+<p>举例：</br><br>
+先创建一个挂载点目录：</br><br>
+<code>mkdir /mnt/sftpSrvData</code></br><br>
+挂载远程目录到本地挂载点目录：</br><br>
+<code>sshfs -o ro root@192.168.100.111:/opt/sftpSrvRootDir  /mnt/sftpSrvData</code></br><br>
+常用参数：</br><br>
+-o ro: 只读方式挂载。如果不指定参数，默认是读写方式挂载。</br><br>
 -o rw: 读写方式挂载。如果不指定参数，默认读写方式挂载。</br></p>
-<p>2.卸载挂载目录</br>
-卸载挂载命令</br>
-<code>fusermount -u mount_point</code></br>
-如果出现提示：</br>
-<code>device is busy</code></br>
-可继续通过下面命令卸载：</br>
+<p>2.卸载挂载目录</br><br>
+卸载挂载命令</br><br>
+<code>fusermount -u mount_point</code></br><br>
+如果出现提示：</br><br>
+<code>device is busy</code></br><br>
+可继续通过下面命令卸载：</br><br>
 <code>umount -fl ./sftpSrvData</code></br></p>
-<p>3.常见问题：</br>
-操作权限问题</br>
-出现执行挂载命令以后，shell命令可以直接进入挂载点操作，但远程程序一直无法操作成功。原因是需要加上 -o 参数：</br>
-<code>sshfs root@192.168.100.111:/opt/sftpSrvRootDir  /mnt/sftpSrvData  -o allow_other</code></br>
+<p>3.常见问题：</br><br>
+操作权限问题</br><br>
+出现执行挂载命令以后，shell命令可以直接进入挂载点操作，但远程程序一直无法操作成功。原因是需要加上 -o 参数：</br><br>
+<code>sshfs root@192.168.100.111:/opt/sftpSrvRootDir  /mnt/sftpSrvData  -o allow_other</code></br><br>
 如果使用-o参数，需要增加一个配置文件：/etc/fuse.conf，添加一行记录：</br></p>
 <pre><code>vim /etc/fuse.conf
 user_allow_other
@@ -201,7 +201,7 @@ user_allow_other
             
               <div class="tag-container">
                 
-                  <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="tag">
+                  <a href="https://zhyfans.github.io/tag/EfMUbYqdL/" class="tag">
                     linux
                   </a>
                 
@@ -210,7 +210,7 @@ user_allow_other
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhyfans.github.io/post/fIc-ezsts">
+                <a href="https://zhyfans.github.io/post/fIc-ezsts/">
                   <h3 class="post-title">
                     mysql驱动与mysql版本及jdk版本对应
                   </h3>

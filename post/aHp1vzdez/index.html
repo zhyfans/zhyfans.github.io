@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://zhyfans.github.io/favicon.ico?v=1565263563748">
+<link rel="shortcut icon" href="https://zhyfans.github.io/favicon.ico?v=1586827385604">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://zhyfans.github.io/styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://zhyfans.github.io">
-        <img src="https://zhyfans.github.io/images/avatar.png?v=1565263563748" class="site-logo">
+        <img src="https://zhyfans.github.io/images/avatar.png?v=1586827385604" class="site-logo">
         <h1 class="site-title">zhyfans&#39;s blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -135,47 +135,47 @@
 </code></pre>
 <p><strong>二、安装nginx</strong></p>
 <p>负载均衡服务器 10.135.100.23安装nginx</br></p>
-<p>1、进入：/picclife/nginx/ 输入以下命令，下载相关包</br>
-下载nginx: wget http://nginx.org/download/nginx-1.8.0.tar.gz</br>
-下载openssl : wget http://www.openssl.org/source/openssl-fips-2.0.9.tar.gz</br>
-下载zlib : wget http://zlib.net/zlib-1.2.8.tar.gz</br>
-下载pcre    : wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz</br>
-<img src="https://zhyfans.github.io/post-images/1562813619758.png" alt=""></br></p>
-<p>2、解压编译安装</br>
+<p>1、进入：/picclife/nginx/ 输入以下命令，下载相关包</br><br>
+下载nginx: wget http://nginx.org/download/nginx-1.8.0.tar.gz</br><br>
+下载openssl : wget http://www.openssl.org/source/openssl-fips-2.0.9.tar.gz</br><br>
+下载zlib : wget http://zlib.net/zlib-1.2.8.tar.gz</br><br>
+下载pcre    : wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz</br><br>
+<img src="https://zhyfans.github.io/post-images/1562813619758.png" alt="" loading="lazy"></br></p>
+<p>2、解压编译安装</br><br>
 按此顺序执行安装：openssl--&gt;pcre--&gt;zlib--&gt;nginx</br></p>
 <pre><code>openssl ：
 tar zxvf openssl-fips-2.0.9.tar.gz
 cd openssl-fips-2.0.9
 ./config &amp;&amp; make &amp;&amp; make install
 </code></pre>
-<p><img src="https://zhyfans.github.io/post-images/1562813634293.png" alt=""></br></p>
+<p><img src="https://zhyfans.github.io/post-images/1562813634293.png" alt="" loading="lazy"></br></p>
 <pre><code>pcre:
 tar zxvf pcre-8.39.tar.gz
 cd pcre-8.39
 ./configure &amp;&amp; make &amp;&amp; make install 
 </code></pre>
-<p><img src="https://zhyfans.github.io/post-images/1562813643590.png" alt=""></br></p>
+<p><img src="https://zhyfans.github.io/post-images/1562813643590.png" alt="" loading="lazy"></br></p>
 <pre><code>zlib:
 tar zxvf zlib-1.2.8.tar.gz
 cd zlib-1.2.8
 ./configure &amp;&amp; make &amp;&amp; make install 
 </code></pre>
-<p><img src="https://zhyfans.github.io/post-images/1562813657651.png" alt=""></br></p>
+<p><img src="https://zhyfans.github.io/post-images/1562813657651.png" alt="" loading="lazy"></br></p>
 <p>最后安装nginx</br></p>
 <pre><code>tar zxvf nginx-1.8.0.tar.gz
 cd nginx-1.8.0
 ./configure &amp;&amp; make &amp;&amp; make install
 </code></pre>
-<p><img src="https://zhyfans.github.io/post-images/1562813666092.png" alt=""></br></p>
-<p>3、启动nginx</br>
-输入命令：/usr/local/nginx/sbin/nginx</br>
-如果出现错误提示：</br>
-<code>error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory</code></br>
-原因：在RedHat 64位机器上nginx读取的pcre文件为/lib64/libpcre.so.1文件，默认安装pcre时libpcre.so文件安装在/usr/local/lib/目录下，所以输入/opt/nginx/sbin/nginx -V 找不到文件路径！！
-进入/usr/local/lib  执行   ln -s /usr/local/lib/libpcre.so.1 /lib64/ 再启动nginx</br>
-<img src="https://zhyfans.github.io/post-images/1562813674665.png" alt=""></br></p>
-<p><strong>三、配置nginx负载均衡</strong></br>
-编辑/usr/local/nginx/conf/ nginx.conf</br>
+<p><img src="https://zhyfans.github.io/post-images/1562813666092.png" alt="" loading="lazy"></br></p>
+<p>3、启动nginx</br><br>
+输入命令：/usr/local/nginx/sbin/nginx</br><br>
+如果出现错误提示：</br><br>
+<code>error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory</code></br><br>
+原因：在RedHat 64位机器上nginx读取的pcre文件为/lib64/libpcre.so.1文件，默认安装pcre时libpcre.so文件安装在/usr/local/lib/目录下，所以输入/opt/nginx/sbin/nginx -V 找不到文件路径！！<br>
+进入/usr/local/lib  执行   ln -s /usr/local/lib/libpcre.so.1 /lib64/ 再启动nginx</br><br>
+<img src="https://zhyfans.github.io/post-images/1562813674665.png" alt="" loading="lazy"></br></p>
+<p><strong>三、配置nginx负载均衡</strong></br><br>
+编辑/usr/local/nginx/conf/ nginx.conf</br><br>
 在http段加入以下代码:</p>
 <pre><code>	upstream 10.135.100.23 { 
     	server 10.135.100.27:8080; 
@@ -193,15 +193,15 @@ server{
 }
 </code></pre>
 <p>重启nginx</br></p>
-<p>访问负载均衡服务器：http://10.135.100.23 ，请求会被分配至24\27两台web服务器。</br>
-停止nginx:</br>
-<img src="https://zhyfans.github.io/post-images/1562813690164.png" alt=""></p>
+<p>访问负载均衡服务器：http://10.135.100.23 ，请求会被分配至24\27两台web服务器。</br><br>
+停止nginx:</br><br>
+<img src="https://zhyfans.github.io/post-images/1562813690164.png" alt="" loading="lazy"></p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://zhyfans.github.io/tag/EfMUbYqdL" class="tag">
+                  <a href="https://zhyfans.github.io/tag/EfMUbYqdL/" class="tag">
                     linux
                   </a>
                 
@@ -210,7 +210,7 @@ server{
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhyfans.github.io/post/conan_tv_list">
+                <a href="https://zhyfans.github.io/post/conan_tv_list/">
                   <h3 class="post-title">
                     名侦探柯南TV版目录（不定期更新）
                   </h3>
